@@ -27,7 +27,8 @@ crater -t template-repo-test
 ### Windows Installation
 
 1. Install the Rust toolchain [rustup-init.exe](https://win.rustup.rs/x86_64)
-then
+
+then run this command
 
 ```sh
 rustup toolchain install stable-x86_64-pc-windows-gnu
@@ -44,6 +45,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 2. Install [MSYS2](https://www.msys2.org/)
+
 In the MSYS2 terminal run this command
 
 ```sh
@@ -52,7 +54,7 @@ pacman --sync mingw-w64-x86_64-gcc
 
 Add `C:\msys64\mingw64\bin` to system `PATH`
 
-Then restart your machine to fully install GCC
+>Then restart your machine to fully install GCC
 
 3. Then use `cargo install` to get `crater`
 
