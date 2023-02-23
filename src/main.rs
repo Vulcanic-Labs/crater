@@ -11,21 +11,22 @@ struct Args {
    template: String,
 
    /// Name of the directory
-   #[arg(short, long, default_value="*")]
+   #[arg(short, long, default_value="<TEMPLATE NAME>")]
    output: String,
 }
 
 fn main() {
    let args = Args::parse();
 
-   let mut repos = HashMap::new();
-   repos.insert(String::from("hammer"), String::from("https://github.com/Vulcanic-Labs/hammer"));
-   repos.insert(String::from("template-repo-test"), String::from("https://github.com/Vulcanic-Labs/template-repo-test"));
+   let repositories = HashMap::from([
+       (String::from("hammer"), String::from("https://github.com/Vulcanic-Labs/hammer")),
+       (String::from("template-repo-test"), String::from("https://github.com/Vulcanic-Labs/template-repo-test")),
+   ]);
 
-   let url = repos.get(&args.template).unwrap();
+   let url = repositories.get(&args.template).unwrap();
 
    let mut output_dir = args.template;
-   if args.output != "*" {
+   if args.output != "<TEMPLATE NAME>" {
        output_dir = args.output;
    }
 
